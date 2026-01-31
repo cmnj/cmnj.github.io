@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <title>cmnj – Website</title>
+  <meta charset="UTF-8">
+  <title>Hellou</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -19,45 +19,19 @@
     .container {
       text-align: center;
       color: #2C0703;
+      max-width: 600px;
+      padding: 20px;
     }
 
     h1 {
       font-size: 48px;
-      margin: 0 0 12px 0;
+      margin-bottom: 30px;
     }
 
     p {
-      font-style: italic;
-      margin: 4px 0;
-    }
-
-    .tipp {
-      font-size: 14px;
-      opacity: 0.8;
-      margin-bottom: 24px;
-    }
-
-    .code-inputs {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      margin-bottom: 24px;
-    }
-
-    .code-inputs input {
-    width: 70px;
-    height: 70px;
-    font-size: 32px;
-    text-align: center;
-    border: 2px solid #661722;   /* neue Farbe */
-    border-radius: 8px;
-    background: #FCF8F7;
-    color: #661722;              /* neue Farbe */
-    outline: none;
-    }
-
-    .code-inputs input:focus {
-    border-color: #661722;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 40px;
     }
 
     button {
@@ -73,47 +47,23 @@
     button:hover {
       opacity: 0.9;
     }
-
-    .error {
-      margin-top: 12px;
-      color: #8b1e14;
-      display: none;
-    }
   </style>
 </head>
 <body>
 
   <div class="container">
     <h1>Hellou</h1>
-    <p>trage den Zahlencode ein</p>
-    <p class="tipp">Tipp: 30.01.2026, 21:25</p>
 
-    <div class="code-inputs">
-      <input maxlength="1" inputmode="numeric">
-      <input maxlength="1" inputmode="numeric">
-      <input maxlength="1" inputmode="numeric">
-      <input maxlength="1" inputmode="numeric">
-    </div>
+    <p>
+      Ich habe dir jetzt 3 Level erstellt, welche du nacheinander überwältigen musst.<br><br>
+      Viel Erfolg und viel Spaß.<br>
+      Ich hab dich lieb &lt;3
+    </p>
 
-    <button onclick="checkCode()">Bestätigen</button>
-
-    <div class="error" id="error">Falscher Code</div>
+    <button onclick="window.location.href='luv-u.html'">
+      Weiter
+    </button>
   </div>
-
-  <script>
-    function checkCode() {
-      const inputs = document.querySelectorAll('.code-inputs input');
-      let code = '';
-      inputs.forEach(input => code += input.value);
-
-      if (code === '7531') {
-        // Weiterleitung zur neuen Seite
-        window.location.href = 'luv-u.html';
-      } else {
-        document.getElementById('error').style.display = 'block';
-      }
-    }
-  </script>
 
 </body>
 </html>
