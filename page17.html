@@ -82,14 +82,17 @@
     </button>
   </div>
 
-  <script>
-    function checkAnswer(value) {
-      const solution = "Idea 22";
-      if (value.trim().toUpperCase() === solution) {
-        document.getElementById("nextBtn").style.display = "inline-block";
-      }
+<script>
+  function checkAnswer(value) {
+    const solution = "IDEA 22";
+    if (value.trim().toUpperCase() === solution) {
+      document.getElementById("nextBtn").style.display = "inline-block";
+    } else {
+      document.getElementById("nextBtn").style.display = "none";
     }
-  </script>
+  }
+</script>
+
 
 </body>
 </html>
