@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Film-Rätsel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #FFF4F0;
+      margin: 0;
+      padding: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      color: #2C0703;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    img {
+      max-width: 300px;
+      border-radius: 0;
+      margin-bottom: 16px;
+    }
+
+    .question {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      max-width: 320px;
+      padding: 14px;
+      font-size: 16px;
+      border: 2px solid #661722;
+      border-radius: 8px;
+      background: #FCF8F7;
+      color: #661722;
+      outline: none;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    button {
+      padding: 14px 32px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #B6465F;
+      color: #FFF4F0;
+      cursor: pointer;
+      display: none;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="Mahal/mahal2.jpg">
+
+    <p class="question">Von welchem Film ist dieses Lied?</p>
+
+    <input
+      type="text"
+      placeholder="Antwort eingeben…"
+      oninput="checkAnswer(this.value)"
+    >
+
+    <button id="nextBtn" onclick="window.location.href='page17.html'">
+      Weiter
+    </button>
+  </div>
+
+<script>
+  function normalize(text) {
+    return text
+      .toUpperCase()
+      .replace(/'/g, '')      
+      .replace(/\s+/g, ' ')   
+      .trim();
+  }
+
+  function checkAnswer(value) {
+    const solution = normalize("HOWLS MOVING CASTLE");
+    const userInput = normalize(value);
+
+    if (userInput === solution) {
+      document.getElementById("nextBtn").style.display = "inline-block";
+    }
+  }
+</script>
+
+
+</body>
+</html>
