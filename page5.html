@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>mahal5</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #FFF4F0;
+      margin: 0;
+      padding: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      color: #2C0703;
+    }
+
+    img {
+      max-width: 300px;
+      border-radius: 0; 
+      margin-bottom: 16px;
+    }
+
+    .question {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .time-input {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .time-input input {
+      width: 60px;
+      height: 70px;
+      font-size: 32px;
+      text-align: center;
+      border: 2px solid #661722;
+      border-radius: 8px;
+      background: #FCF8F7;   
+      color: #661722;
+      outline: none;
+    }
+
+    .colon {
+      font-size: 32px;
+      font-weight: bold;
+      color: #661722;
+      margin: 0 4px;
+    }
+
+    button {
+      padding: 14px 32px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #661722;
+      color: #FFF4F0;
+      cursor: pointer;
+      display: none; 
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="Mahal/mahal5.jpg">
+
+    <p class="question">Um wie viel Uhr wurde das Foto geschossen? (5/15)</p>
+
+    <div class="time-input">
+      <input maxlength="1" inputmode="numeric" oninput="checkTime()">
+      <input maxlength="1" inputmode="numeric" oninput="checkTime()">
+      <span class="colon">:</span>
+      <input maxlength="1" inputmode="numeric" oninput="checkTime()">
+      <input maxlength="1" inputmode="numeric" oninput="checkTime()">
+    </div>
+
+    <button id="nextBtn" onclick="window.location.href='page6.html'">
+      Weiter
+    </button>
+  </div>
+
+  <script>
+    function checkTime() {
+      const inputs = document.querySelectorAll('.time-input input');
+      let value = '';
+      inputs.forEach(input => value += input.value);
+
+      if (value === '1450') {
+        document.getElementById('nextBtn').style.display = 'inline-block';
+      }
+    }
+  </script>
+
+</body>
+</html>
