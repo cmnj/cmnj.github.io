@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat – Level</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #FFF4F0;
+      margin: 0;
+      padding: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 650px;
+      color: #2C0703;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .chat {
+      background: #FCF8F7;
+      border: 2px solid #661722;
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 14px;
+
+      max-height: 70vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .line {
+      margin-bottom: 14px;
+    }
+
+    .name {
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .line input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #661722;
+      border-radius: 6px;
+      background: #FFF;
+      color: #2C0703;
+      outline: none;
+    }
+
+    .fixed-text {
+      font-size: 14px;
+      padding: 2px 0;
+    }
+
+    .actions {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 14px 32px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #2C0703;
+      color: #FFF4F0;
+      cursor: pointer;
+      display: none;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="intro">
+    Scrolle jetzt zum <strong>14. November 2024 um 21:13</strong>
+  </div>
+
+  <div class="chat">
+
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+    <div class="line"><span class="name">Cris Mae:</span><input type="text"></div>
+
+    <div class="line"><span class="name">Neal:</span><div class="fixed-text">🥰🥰🥰</div></div>
+
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+    <div class="line"><span class="name">Cris Mae:</span><input type="text"></div>
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+    <div class="line"><span class="name">Cris Mae:</span><input type="text"></div>
+
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+
+    <div class="line"><span class="name">Cris Mae:</span><input type="text"></div>
+
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+
+    <div class="line">
+      <span class="name">Neal:</span>
+      <div class="fixed-text">
+        hätte einen anderen film aber den wollte ich lieber mit dir schauen
+      </div>
+    </div>
+
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+    <div class="line"><span class="name">Cris Mae:</span><input type="text"></div>
+    <div class="line"><span class="name">Cris Mae:</span><input type="text"></div>
+    <div class="line"><span class="name">Cris Mae:</span><input type="text"></div>
+
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+
+    <div class="line"><span class="name">Cris Mae:</span><input type="text"></div>
+
+    <div class="line">
+      <span class="name">Neal:</span>
+      <div class="fixed-text">dann euch viel spaß 🥰</div>
+    </div>
+
+    <div class="line">
+      <span class="name">Cris Mae:</span>
+      <div class="fixed-text">Und dir auch 🤍</div>
+    </div>
+
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+
+    <div class="line">
+      <span class="name">Neal:</span>
+      <div class="fixed-text">dankee 🥰</div>
+    </div>
+
+    <div class="line">
+      <span class="name">Neal:</span>
+      <div class="fixed-text">wir sehen uns ja bald 🥰</div>
+    </div>
+
+    <div class="line"><span class="name">Cris Mae:</span><input type="text"></div>
+
+    <div class="line">
+      <span class="name">Neal:</span>
+      <div class="fixed-text">joa mal schauen 😂</div>
+    </div>
+
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+    <div class="line"><span class="name">Neal:</span><input type="text"></div>
+
+    <div class="line">
+      <span class="name">Cris Mae:</span>
+      <div class="fixed-text">Bis dann neaaaal 🥰</div>
+    </div>
+
+  </div>
+
+  <div class="actions">
+    <button id="nextBtn" onclick="window.location.href='luv-u.html'">Weiter</button>
+  </div>
+
+</div>
+
+<script>
+  const inputs = document.querySelectorAll('.chat input');
+  const nextBtn = document.getElementById('nextBtn');
+
+  function checkAllFilled() {
+    let allFilled = true;
+    inputs.forEach(input => {
+      if (input.value.trim() === '') allFilled = false;
+    });
+    nextBtn.style.display = allFilled ? 'inline-block' : 'none';
+  }
+
+  inputs.forEach(input => {
+    input.addEventListener('input', checkAllFilled);
+  });
+</script>
+
+</body>
+</html>
