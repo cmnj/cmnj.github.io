@@ -77,22 +77,41 @@
       oninput="checkAnswer(this.value)"
     >
 
-    <button id="nextBtn" onclick="window.location.href='page18.html'">
+    <button id="nextBtn" onclick="goNext()">
       Weiter
     </button>
   </div>
 
 <script>
+  let secretMode = false;
+
+  function normalize(text) {
+    return text
+      .toUpperCase()
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
   function checkAnswer(value) {
-    const solution = "IDEA 22";
-    if (value.trim().toUpperCase() === solution) {
-      document.getElementById("nextBtn").style.display = "inline-block";
+    const input = normalize(value);
+
+    const hasSong = input.includes("IDEA 22");
+    const hasSecret = input.includes("23.05.2005");
+
+    secretMode = hasSong && hasSecret;
+
+    document.getElementById("nextBtn").style.display =
+      hasSong ? "inline-block" : "none";
+  }
+
+  function goNext() {
+    if (secretMode) {
+      window.location.href = "secret.html";   
     } else {
-      document.getElementById("nextBtn").style.display = "none";
+      window.location.href = "page18.html";   
     }
   }
 </script>
-
 
 </body>
 </html>
