@@ -98,10 +98,11 @@
     const hasSong = input.includes("IDEA 22");
     const hasSecret = input.includes("23.05.2005");
 
-    secretMode = hasSong && hasSecret;
+
+    secretMode = hasSecret;
 
     document.getElementById("nextBtn").style.display =
-      hasSong ? "inline-block" : "none";
+      (hasSong || hasSecret) ? "inline-block" : "none";
   }
 
   function goNext() {
@@ -112,6 +113,7 @@
     }
   }
 </script>
+
 
 </body>
 </html>
